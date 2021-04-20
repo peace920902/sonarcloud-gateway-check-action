@@ -1,0 +1,20 @@
+name: "Sonar gateway check"
+description: "Checked if code pass sonar qube"
+input:
+  hostname:
+    description: "hostname"
+    required: false
+    default: "sonarcloud.io"
+  port:
+    description: "port"
+    required: false
+    default: 443
+  organization-key:
+    description: "Organization key from sonarcloud"
+    required: true
+  project-key:
+    description: "Project key from sonarcloud"
+    required: true
+runs:
+  using: "node12"
+  main: "dist/index.js"
